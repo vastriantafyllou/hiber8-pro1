@@ -19,13 +19,25 @@ public class App {
 
         em.getTransaction().begin();
 
-//        em.find(teacher.getClass(),2);
-//        em.remove(teacher);
+//        Teacher teacher = em.find(Teacher.class,1L);
+//        teacher.setFirstname("Αθ.");
+//        em.merge(teacher);
+
 //        Course course = em.find(Course.class, 2L);
 //        em.remove(course);
 //        course.setTeacher(null);
-        Teacher teacher = em.find(Teacher.class, 2L);
+//        Teacher teacher = em.find(Teacher.class, 2L);
+//        em.remove(teacher);
+
+//        em.persist(teacher);
+//        em.persist(course);
+//        teacher.addCourse(course);
+        Teacher teacher = em.find(Teacher.class, 3L);
         em.remove(teacher);
+
+//        Course course = em.find(Course.class, 3L);
+//        em.remove(course);
+
 
 
 
