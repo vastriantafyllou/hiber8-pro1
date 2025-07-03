@@ -21,7 +21,6 @@ public class Teacher {
     @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
     private Set<Course> courses =new HashSet<>();
 
-
     public Teacher() {
 
     }
