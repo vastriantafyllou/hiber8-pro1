@@ -13,33 +13,23 @@ public class App {
 
     public static void main(String[] args) {
 
-//        Teacher teacher = new Teacher(null, "Μάκης", "Καπέτης");
-//        Course course = new Course(null, "Databases");
-//        teacher.addCourse(course);
 
         em.getTransaction().begin();
 
-//        Teacher teacher = em.find(Teacher.class,1L);
-//        teacher.setFirstname("Αθ.");
-//        em.merge(teacher);
+        Teacher teacher = em.find(Teacher.class,1L);
+        teacher.setFirstname("Αθ.");
+        em.merge(teacher);
 
-//        Course course = em.find(Course.class, 2L);
-//        em.remove(course);
-//        course.setTeacher(null);
-//        Teacher teacher = em.find(Teacher.class, 2L);
-//        em.remove(teacher);
-
-//        em.persist(teacher);
-//        em.persist(course);
-//        teacher.addCourse(course);
-        Teacher teacher = em.find(Teacher.class, 3L);
+        Course course = em.find(Course.class, 1L);
+        em.remove(course);
+        course.setTeacher(null);
         em.remove(teacher);
 
-//        Course course = em.find(Course.class, 3L);
-//        em.remove(course);
+        em.persist(teacher);
+        em.persist(course);
+        teacher.addCourse(course);
 
-
-
+        em.remove(course);
 
 
         em.getTransaction().commit();
